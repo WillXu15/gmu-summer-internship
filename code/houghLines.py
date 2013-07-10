@@ -15,10 +15,11 @@ def main():
 	cv2.destroyAllWindows()
 
 def hough(image):
-	image = cv2.GaussianBlur(image, (11,11),0)
-	canny = cv2.Canny(image, 110, 160)
+	#image = cv2.GaussianBlur(image, (11,11),0)
+	image = cv2.blur(image, (5,7))
+	canny = cv2.Canny(image, 150, 200)
 	color_image = cv2.cvtColor(canny, cv2.COLOR_GRAY2BGR)
-	houghLines = cv2.HoughLinesP(canny, 1, math.pi/180, 150, minLineLength = 300, maxLineGap = 1000)
+	houghLines = cv2.HoughLinesP(canny, 1, math.pi/180, 100, minLineLength = 250, maxLineGap = 100)
 	print len(houghLines[0])
 	for x in range(len(houghLines[0])):
 		pt1 = (houghLines[0][x][0], houghLines[0][x][1])
