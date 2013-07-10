@@ -1,7 +1,6 @@
 import cv2
 import os
 import math
-import numpy
 
 def main():
 
