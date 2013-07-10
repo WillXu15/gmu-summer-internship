@@ -21,6 +21,6 @@ def hough(image):
 	for x in range(len(houghLines)):
 		pt1 = (houghLines[x][0], houghLines[x][1])
 		pt2 = (houghLines[x][2], houghLines[x][3])
-		cv2.line(image, pt1, pt2, (0,0,255), 3)
+		cv2.line(image, pt1, pt2, (255,0,0), 3)
 	return image
 main()
