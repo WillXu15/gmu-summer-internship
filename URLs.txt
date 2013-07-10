@@ -1,0 +1,8 @@
+iPhone Sudoku Grab  How does it all work 
+http://sudokugrab.blogspot.com/2009/07/how-does-it-all-work.html
+
+SuDoKu Grabber with OpenCV   AI Shack
+http://www.aishack.in/2010/08/sudoku-grabber-with-opencv/
+
+Realtime Webcam Sudoku Solver - CodeProject
+http://www.codeproject.com/Articles/238114/Realtime-Webcam-Sudoku-Solver
