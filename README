@@ -1,0 +1,7 @@
+Todo:
+
+1. Use Hough Transformations to get edges of the canvas
+2. Use the edges to find the 4 corners
+3. Find the length of each edge
+4. Average the lengths to get a rectangle
+5. Use perceptual transformation to change the skewed shape into a rectangle
