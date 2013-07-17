@@ -8,7 +8,7 @@ def main():
 	directory = os.path.dirname(__file__)
 	picLoc = os.path.join(directory, "../video-image/1m50s.png")
 
-	image = cv2.imread("video-image/1m50s.png")
+	image = cv2.imread(picLoc)
 	print "Sending image to houghLines.py"
 	a = hough(image)
 
