@@ -5,7 +5,7 @@ import os
 def main():
 	
 	directory = os.path.dirname(__file__)
-	vidLoc = os.path.join(directory, "../video-image/video.mp4")
+	vidLoc = os.path.join(directory, "../video-image/video.avi")
 
 	vid = cv2.VideoCapture()
 	vid.release()
