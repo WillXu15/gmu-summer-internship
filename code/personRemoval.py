@@ -4,6 +4,28 @@ def main():
 	print "OPENING VIDEO"	
 	vid = cv2.VideoCapture()
 	vid.open("write.avi")
+
+	N = 150
+	imgs = np.asarray([ vid.read()[1] for i in xrange(N) ])
+
+	## imgs is a num-frames x num-rows x num-cols x num-channels array.
+	median_frame = np.median( imgs, axis=0 )
+	median_frame = median_frame.astype(np.uint8)
+
+	cv2.imshow("", median_frame)
+	key = cv2.waitKey()
+
+"""
+	while key != 113:
+				
+		imgs[:-1] = imgs[1:]
+		imgs[-1] = vid.read()[1]
+		median_frame = np.median( imgs, axis=0 )
+		cv2.imshow(str(frame_num), median_frame.as_opencv_image() )
+	cv2.destroyWindow("")
+"""
+
+"""
 #=================================frame 1==============================================================
 	print "MAKING FIRST FRAME"
 	debug, img = vid.read()
@@ -46,5 +68,5 @@ def main():
 	#print "max blue", "[%d,%d,%d]" %(current_B[maxB], current_G[maxB], current_R[maxB])
 	#print "max green", "[%d,%d,%d]" %(current_B[maxG], current_G[maxG], current_R[maxG])
 	#print "max red", "[%d,%d,%d]" %(current_B[maxR], current_G[maxR], current_R[maxR])
-
+"""
 if __name__ == "__main__": main()
