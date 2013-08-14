@@ -33,14 +33,12 @@ def main():
 		print "frame", frame_num, "was writen"
 
 	print "======================================="
-	imgs
+
 	imgs = np.concatenate( (imgs,  np.repeat( imgs[-1:], N, axis = 0) ), axis=0 )
 	while total_frames-frame_num != 0:
 		frame_num += 1
-		N+=1
 		imgs[:-1] = imgs[1:]
-		imgs[-1] = vids.read()[1]
-		median_frame = np.median( imgs, axis = 0)
+		median_frame = np.median( imgs[:101], axis = 0)
 		videowriter.write(median_frame.astype(np.uint8))
 		
 
