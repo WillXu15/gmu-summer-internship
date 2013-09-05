@@ -2,7 +2,7 @@ import cv
 import cv2
 import numpy
 import os
-
+import time
 def main():
 #============================================Read video in==========================================================
 	directory = os.path.dirname(__file__)
@@ -25,7 +25,7 @@ def main():
 	avgTop = int((topLength + botLength)/2)
 	avgLeft = int((leftLength + rightLength)/2)
 
-	write = cv2.VideoWriter("write.avi", cv.CV_FOURCC("M", "J", "P", "G"), int(vid.get(5)), (avgTop,avgLeft))
+	write = cv2.VideoWriter("write.mpg", cv.CV_FOURCC("M", "J", "P", "G"), int(vid.get(5)), (avgTop,avgLeft))
 
 	newcorners = numpy.array([[0,0], [0, avgLeft], [avgTop, avgLeft], [avgTop,0]],numpy.float32)
 
@@ -33,7 +33,6 @@ def main():
 #====================================================Warp all frames=====================================================
 	for x in range(2820):
 		debug, im = vid.read()
-
 		transformMatrix = cv2.getPerspectiveTransform(corners, newcorners)
 
 		image = cv2.warpPerspective(im, transformMatrix, dsize)

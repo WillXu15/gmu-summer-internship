@@ -1,7 +1,7 @@
 import cv
 import cv2
 import numpy as np
-import time
+import tictoc
 
 def main():
 	N = 50
@@ -9,9 +9,9 @@ def main():
 	vid = cv2.VideoCapture()
 	vid.open("write.avi")
 	print "LOADING VIDEO"
-	start = time.clock()
+
 	imgs = np.asarray([ vid.read()[1] for i in range(N+2) ])
-	print time.clock() - start
+
 	print "CONCATENATING VIDEO"
 	imgs = np.concatenate( ( np.repeat( imgs[:1], N, axis = 0 ), imgs  ), axis = 0 )
 	
